@@ -65,21 +65,7 @@ public class Principal {
         }
 		
         scanner.close();
-		
-		// administrar: cadastrar livros, remover livros, periodicos, dvds e
-		// usuarios
-
-		// Cadastro:
-
-		/*Item item = new Item();
-
-		Livro livro = new Livro();
-		System.out.println("Informe o Título do Livro: ");
-		livro.setTitulo(titulo);
-
-		Dvd dvd = new Dvd();
-		System.out.println("Informe o Título do DVD: ");
-		dvd.setTitulo(titulo);*/
+	
 
 		// atendimento: emprestimo, devolucaoo, bloqueio e desbloqueio de livros
 

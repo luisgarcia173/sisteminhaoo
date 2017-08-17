@@ -5,12 +5,16 @@
  */
 package biblioteca.itens;
 
+import biblioteca.usuario.TipoUsuario;
+
 /**
  *
  * @author analiviameister
  */
-public class Dvd extends Item{
+public class Dvd extends Item {
     
+	private TipoUsuario privilegio;
+	
     public Dvd(String tit) {
         super(tit);
     }
