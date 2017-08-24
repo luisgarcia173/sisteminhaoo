@@ -38,10 +38,12 @@ public class Principal {
             } else {
             	switch (input) {
 				case "1":
-					//InterfaceConsole.printOpcoes(scanner, usuarios, livros, dvds);
+					InterfaceConsole.printFuncionarios(funcionarios);
+					InterfaceConsole.printMenu();
 					break;
 				case "2":
-					//atendimento();
+					InterfaceConsole.printEventos(scanner, funcionarios);
+					InterfaceConsole.printMenu();
 					break;
 				default:
 					System.out.println("Opcao nao reconhecida!");

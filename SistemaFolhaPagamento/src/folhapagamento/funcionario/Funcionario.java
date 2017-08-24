@@ -111,7 +111,7 @@ public abstract class Funcionario {
 	}
 
 	public String toString() {
-		return ("Funcionario: " + this.nomeFunc);
+		return ("Funcionario: " + this.nomeFunc + " " + (this.eventos.size() > 0 ? this.eventos : ""));
 	}
 
 	abstract void processaEvento(Evento evento) throws FolhaException;

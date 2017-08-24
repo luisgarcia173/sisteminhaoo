@@ -12,7 +12,7 @@ public class EventoFalta extends Evento {
 	}
 
 	public String toString() {
-		return super.getTipoEvento() + " em " + super.getDtEvento();
+		return super.getTipoEvento() + " em " + DATE_FORMAT.format(super.getDtEvento());
 	}
 
 }

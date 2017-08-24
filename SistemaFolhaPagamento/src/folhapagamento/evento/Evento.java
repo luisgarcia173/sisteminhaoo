@@ -1,5 +1,6 @@
 package folhapagamento.evento;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -11,6 +12,7 @@ public abstract class Evento {
 	private int dia;
 	private int mes;
 	private int ano;
+	protected static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
 	public Evento(Date dt, float val) {
 		this.dtEvento = dt;
@@ -31,7 +33,7 @@ public abstract class Evento {
 	}
 
 	public String getTipoEvento() {
-		return (this.getClass()).getName();
+		return (this.getClass()).getSimpleName();
 	}
 
 	public boolean equals(Evento e) {
@@ -40,7 +42,7 @@ public abstract class Evento {
 	}
 
 	public String toString() {
-		return getTipoEvento() + " em " + this.dia + "/" + this.mes + "/" + this.ano + " valor=" + valorEvento;
+		return getTipoEvento() + " em " + DATE_FORMAT.format(dtEvento) + " valor=" + valorEvento;
 	}
 
 }

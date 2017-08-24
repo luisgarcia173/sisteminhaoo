@@ -20,10 +20,10 @@ public class EventoRescisao extends Evento {
 
 	public EventoRescisao(Date dt, int tp, boolean av) throws FolhaException {
 		super(dt, 0);
+		this.motivo = tp;
 		if (motivo != SE_DEMITIU && motivo != FOI_DEMITIDO && motivo != APOSENTADO) {
 			throw new FolhaException("Rescisao com codigo de motivo invalido");
 		}
-		this.motivo = tp;
 		this.avisoPrevio = av;
 	}
 
@@ -36,8 +36,21 @@ public class EventoRescisao extends Evento {
 	}
 
 	public String toString() {
-		return super.getTipoEvento() + " em " + super.getDtEvento() + " motivo=" + this.motivo + " aviso previo= "
-				+ this.avisoPrevio;
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.getTipoEvento()).append(" em ").append(DATE_FORMAT.format(super.getDtEvento()));
+		
+		String detalheMotivo = "";
+		if (this.motivo == 1) {
+			detalheMotivo = "Pediu demissao";
+		} else if (this.motivo == 2) {
+			detalheMotivo = "Foi demitido";
+		} else {
+			detalheMotivo = "Aposentado";
+		}
+		sb.append(" > Motivo: ").append(detalheMotivo)
+		  .append(" >  Cumpriu aviso previo: ").append(this.avisoPrevio ? "Sim" : "Nao");
+		
+		return sb.toString();
 	}
 
 }
